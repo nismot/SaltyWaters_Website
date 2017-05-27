@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SaltyWaters | Dashboard</title>
+    <title>SaltyWaters | Tasks</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -47,7 +47,7 @@
         <div class="col-sm-3 col-md-2 sidebar sidebar-bg-color">
           <ul class="nav nav-sidebar">
             <li><a href="#">Tank Setup</a></li>
-            <li><%= link_to 'Tasks', controller: 'tasks' %></li>
+            <li><a href="#">Tasks</a></li>
             <li><a href="#">Test Results</a></li>
           </ul>
           <ul class="nav nav-sidebar">
@@ -64,38 +64,41 @@
           </ul>
         </div>
 
-        <!-- Tank Setup information will show here -->
+        <!-- Task information will show here -->
         <div class="col-sm-9 main">
-          <h3>Tank Setup</h3>
-          <div class="table-responsive">
+          <h2 class="sub-header">Tasks</h2>
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Frequency</th>
+                    <th>Taskname</th>
+                    <th>Details</th>
+                    <th>Datetime</th>
+                    <th colspan="3"></th>
+                  </tr>
+                </thead>
 
+                <tbody>
+                  <% @tasks.each do |task| %>
+                    <tr>
+                      <td><%= task.frequency %></td>
+                      <td><%= task.taskName %></td>
+                      <td><%= task.details %></td>
+                      <td><%= task.dateTime %></td>
+                      <td><%= link_to 'Show', task %></td>
+                      <td><%= link_to 'Edit', edit_task_path(task) %></td>
+                      <td><%= link_to 'Delete', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+              <br>
+              <%= link_to 'New Task', new_task_path %>
+            </div>
           </div>
-
         </div>
       </div>
-
-      <!-- Task information will show here -->
-      <div class="row sidebar-bg-color">
-        <div class="col-sm-3 col-md-2">
-
-        </div>
-        <div class="col-sm-9 main">
-          <h3>Tasks</h3>
-
-        </div>
-      </div>
-
-      <!-- Test information will show here -->
-      <div class="row sidebar-bg-color">
-        <div class="col-sm-3 col-md-2">
-
-        </div>
-        <div class="col-sm-9 main">
-          <h3>Tests</h3>
-        </div>
-      </div>
-
-    </div>
 
 
     <%= yield %>

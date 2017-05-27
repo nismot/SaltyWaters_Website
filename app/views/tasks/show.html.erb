@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Frequency:</strong>
+  <%= @task.frequency %>
+</p>
+
+<p>
+  <strong>Taskname:</strong>
+  <%= @task.taskName %>
+</p>
+
+<p>
+  <strong>Details:</strong>
+  <%= @task.details %>
+</p>
+
+<p>
+  <strong>Datetime:</strong>
+  <%= @task.dateTime %>
+</p>
+
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', tasks_path %>

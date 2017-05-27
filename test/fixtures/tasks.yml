@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  frequency: MyString
+  taskName: MyString
+  details: MyText
+  dateTime: 2017-05-27 00:46:01
+
+two:
+  frequency: MyString
+  taskName: MyString
+  details: MyText
+  dateTime: 2017-05-27 00:46:01
