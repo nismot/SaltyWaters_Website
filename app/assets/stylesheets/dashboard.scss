@@ -3,12 +3,15 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .sidebar-top-space {
-  margin-top: 75px;
+  margin-top: 50px;
 }
 
 // just here for testing block sizes
-//.sidebar-bg-color {
+.sidebar-border {
   //background-color: #222222;
-//}
+  border-style: solid;
+  border-width: 1px;
+  border-color: #9D9D95;
+}
 
 // #9D9D95 color of text
